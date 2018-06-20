@@ -1,0 +1,30 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main()
+{
+    int na,nb;
+    cin>>na>>nb;
+    string s = "";
+    vector<int> a,b;
+    vector<int>::iterator it;
+    a.resize(na);
+    b.resize(nb);
+    int k,m;
+    cin>>k>>m;
+    for(int i=0;i<na;i++)
+    {
+        cin>>a[i];
+    }
+    for(int i =0 ;i<nb;i++)
+    {
+        cin>>b[i];
+    }
+
+    if(a[k - 1] < b[nb - m])
+    {
+        cout<<"YES";
+    }
+    else cout<<"NO";
+    return 0;
+    }
