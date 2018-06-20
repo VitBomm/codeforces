@@ -1,0 +1,25 @@
+#include<iostream>
+    #include<vector>
+    using namespace std;
+        int main()
+        {
+            int n,h;
+            cin>>n>>h;
+            int tong =0;
+            vector<int> v;
+            v.resize(n);
+            for(int i=0;i<v.size();i++)
+                {
+                    cin>>v[i];
+                    if(v[i]<=h)
+                    {
+                        tong+=1;
+                    }
+                    else
+                    {
+                        tong+=2;
+                    }
+                }
+            cout<<tong;
+            return 0;
+        }
