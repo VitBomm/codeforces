@@ -1,0 +1,33 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main()
+{
+    int n;
+    int dem=0;
+    cin>>n;
+    vector<int> v;
+    v.resize(n);
+    for(int i=0;i<v.size();i++)
+    {
+        cin>>v[i];
+        if(v[i] == 0)
+        {
+            dem++;
+        }
+    }
+    if(n==1 && dem ==0)
+    {
+        cout<<"YES";
+    }
+    else
+        if(dem==1 && n>1)
+        {
+            cout<<"YES";
+        }
+        else
+        {
+            cout<<"NO";
+        }
+    return 0;
+    }
