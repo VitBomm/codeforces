@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+    int main()
+    {
+        int cost,dollar,nbbnn;
+        int tong =0;
+        int j=1;
+        cin>>cost>>dollar>>nbbnn;
+        for(int i =0;i<nbbnn;i++)
+        {
+            int tam = cost *j;
+            tong+=tam;
+            j++;
+        }
+        if(tong - dollar <0)
+        {
+            cout<<0;
+        }
+        else
+        {
+            cout<<tong-dollar;
+        }
+            return 0;
+    }
