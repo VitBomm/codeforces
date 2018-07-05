@@ -1,0 +1,64 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+// automato phần tử trong b chứa trong a theo thứ tự
+// array thay đổi trật tự các chữ trong chuỗi để a==b
+//both sử dụng thay đổi trật tự và các phần tử b là con của phần tử a
+bool automaton(string a, string b)
+{
+    int k = 0;
+    for (int i = 0; i < a.length() and k < b.length(); i++)
+        if(a[i] == b[k])
+        {
+            k++;
+        }
+    if(k == b.length())
+       {
+           return true;
+       }
+       return false;
+}
+bool arraya(string s, string t)
+{
+    sort(s.begin(),s.end());
+    sort(t.begin(),t.end());
+    if(s == t)
+    {
+        return true;
+    }
+    return false;
+}
+bool both(string s, string t)
+{
+    for(int i = 0; i<t.length();i++)
+    {
+        int p = (int)s.find(t[i]);
+        if(p == -1)
+        {
+            return false;
+        }
+        s[p] = 0;
+    }
+    return true;
+}
+int main() {
+    string s,t;
+    cin>>s>>t;
+    if(automaton(s, t) == true)
+    {
+        cout<<"automaton";
+        return 0;
+    }
+    if(arraya(s, t) == true)
+        {
+            cout<<"array";
+            return 0;
+        }
+    if (both(s, t)==true) {
+        cout<<"both";
+        return 0;
+    }
+    cout<<"need tree";
+    return 0;
+}
