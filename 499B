@@ -1,0 +1,60 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+
+int main()
+{
+    int n,m;
+    cin>>n>>m;
+    vector<string> v1;
+    vector<string> v2;
+    vector<string> v3;
+    for(int i = 0 ;i<m;i++)
+    {
+        string a;
+        string b;
+        cin>>a;
+        cin>>b;
+        v1.push_back(a);
+        v2.push_back(b);
+    }
+    for(int i =0;i<n;i++)
+    {
+        string c;
+        cin>>c;
+        v3.push_back(c);
+    }
+    for(int i = 0;i<n;i++)
+    {
+        for(int j =0 ;j<m;j++)
+        {
+            int p1 = -1;
+            int p2 = -1;
+            if(v3[i] == v1[j])
+            {
+                p1 = 0;
+            }
+            if(v3[i] == v2[j])
+            {
+                p2 = 0;
+            }
+            if(p1!= -1 || p2 != -1)
+            {
+                int length1 = (int)v1[j].length();
+                int length2 = (int)v2[j].length();
+                if (length2 < length1)
+                {
+                    cout<<v2[j]<<" ";
+                }
+                else
+                {
+                cout<<v1[j]<<" ";
+                }
+            }
+        }
+    }
+    return 0;
+}
