@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <vector>
+using namespace std;
+int n,k;
+vector<string> v;
+int bestcase = 1;
+int worstcase = 1;
+int main()
+{
+    cin>>n>>k;
+    for(int i =0 ; i <=n;i++)
+    {
+        string a;
+        cin>>a;
+        v.push_back(a);
+    }
+    string password = v[n];
+    int dem = 0;
+    for(int i = 0 ; i <n;i++)
+    {
+        if(v[i].length() < password.length())
+        {
+            bestcase++;
+            dem++;
+        }
+        if(dem == k)
+        {
+            bestcase += 5;
+            dem = 0;
+        }
+    }
+    dem =0;
+    for(int i =0; i<n;i++)
+    {
+        if(v[i].length() > password.length())
+        {
+            dem++;
+        }
+    }
+    int fail = n-dem-1;
+    cout<<bestcase<<" "<<fail+(fail/k)*5+1;
+    return 0;
+}
